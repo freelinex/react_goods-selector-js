@@ -35,10 +35,11 @@ export const App = () => {
           No goods selected
         </h1>
       )}
-      {goods.map(good => (
-        <table className="table" key={good}>
-          <tbody>
+      <table className="table">
+        <tbody>
+          {goods.map(good => (
             <tr
+              key={good}
               data-cy="Good"
               className={
                 selectedGood === good ? 'has-background-success-light' : ''
@@ -74,9 +75,9 @@ export const App = () => {
                 {good}
               </td>
             </tr>
-          </tbody>
-        </table>
-      ))}
+          ))}
+        </tbody>
+      </table>
     </main>
   );
 };
